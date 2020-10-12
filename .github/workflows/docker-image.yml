@@ -27,7 +27,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: my-org/my-repo/my-image   ulrikhindoe/minikube_experiments/ulriks-dotnet-core-hello-world-app:1.0
+          repository: ulrikhindoe/minikube_experiments/ulriks-dotnet-core-hello-world-app:1.0
           tag_with_ref: true
   # push_to_registry:
   #   name: Push Docker image to Docker Hub
