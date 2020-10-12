@@ -9,25 +9,26 @@ on:
 jobs:
 
   build:
+    name: Build the Docker image - Job
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Build the Docker image - Step
       run: docker build . --file Dockerfile --tag ulriks-dotnet-core-hello-world-app-image:$(date +%s)
   push_to_registry:
-    name: Push Docker image to GitHub Packages
+    name: Push Docker image to GitHub Packages - Job
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
+      - name: Check out the repo - Step
         uses: actions/checkout@v2
-      - name: Push to GitHub Packages
+      - name: Push to GitHub Packages - Step
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: ulrikhindoe/minikube_experiments/ulriks-dotnet-core-hello-world-app
+          repository: ulrikhindoe/ulriks-dotnet-core-hello-world-app/ulriks-dotnet-core-hello-world-app
           tag_with_ref: true
   # push_to_registry:
   #   name: Push Docker image to Docker Hub
