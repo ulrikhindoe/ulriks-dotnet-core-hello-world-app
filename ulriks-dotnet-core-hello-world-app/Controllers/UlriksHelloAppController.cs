@@ -24,7 +24,7 @@ namespace ulriks_dotnet_core_hello_world_app.Controllers
         public IEnumerable<string> Get()
         {
             var rng = new Random();
-            return new List<string> { "Ulrik", "says", "hello", "v2" };
+            return new List<string> { "Ulrik", "says", "davs", "v2" };
         }
     }
 }
